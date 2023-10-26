@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:todo_list_app/constants/colors.dart';
+import 'package:todo_list_app/controllers/todo_controller.dart';
 
 class SearchBarX extends StatelessWidget {
-  const SearchBarX({super.key});
+  SearchBarX({super.key});
+
+  final TodoController todoController = Get.put(TodoController());
+  final TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +15,7 @@ class SearchBarX extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Column(
         children: [
-          _searchBox()
+          _searchBox(),
         ],
       ),
     );
@@ -23,9 +28,13 @@ class SearchBarX extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
       ),
-      child: const TextField(
+      child: TextField(
+        onChanged: (value) {
+          todoController.searchQuery.value = value;
+          todoController.searchTasks();
+        },
         cursorColor: Colors.grey,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
             contentPadding: EdgeInsets.all(0),
             prefixIcon: Icon(
               Icons.search,
