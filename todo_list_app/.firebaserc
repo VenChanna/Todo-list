@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "todo-list-ef9b6"
-  }
+    "default": "todo-list-ef9b6",
+    "staging": "todo-list-ef9b6"
+  },
+  "targets": {},
+  "etags": {}
 }
