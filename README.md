@@ -1,8 +1,8 @@
 # Todo-list
-In this project I use Firebase for the cloud database and Getx for sate management.
+In this project, I use Firebase for the cloud database and Getx for state management.
 
 ## Project Link 
-Open [https://todo-list-ef9b6.web.app] with your browser to see the output.
+Open [https://todo-list-ef9b6.web.app] with your browser to see the output and in case can't reach it please open it in incognito instead.
 
 ## Project Functionality 
 
